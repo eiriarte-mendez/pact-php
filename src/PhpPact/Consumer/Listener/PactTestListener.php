@@ -7,7 +7,6 @@ use PhpPact\Broker\Service\BrokerHttpClient;
 use PhpPact\Http\GuzzleClient;
 use PhpPact\Standalone\Exception\MissingEnvVariableException;
 use PhpPact\Standalone\MockService\MockServer;
-use PhpPact\Standalone\MockService\MockServerConfigInterface;
 use PhpPact\Standalone\MockService\MockServerEnvConfig;
 use PhpPact\Standalone\MockService\Service\MockServerHttpService;
 use PHPUnit\Framework\AssertionFailedError;
@@ -30,11 +29,11 @@ class PactTestListener implements TestListener
     /**
      * Name of the test suite configured in your phpunit config.
      *
-     * @var string
+     * @var string[]
      */
     private $testSuiteNames;
 
-    /** @var MockServerConfigInterface */
+    /** @var MockServerEnvConfig */
     private $mockServerConfig;
 
     /** @var bool */
